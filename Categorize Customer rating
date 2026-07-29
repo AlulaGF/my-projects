@@ -1,0 +1,21 @@
+def categorize_ratings(ratings):
+    low = 0
+    medium = 0
+    high = 0
+
+    for rating in ratings:
+        if rating <= 4:
+            low += 1
+        elif 5 <= rating <= 7:
+            medium += 1
+        elif 8 <= rating <= 10:
+            high += 1
+
+    print(f"Low: {low}")
+    print(f"Medium: {medium}")
+    print(f"High: {high}")
+
+# Checking my results 
+# Calling categorize_ratings([1, 3, 5, 7, 8, 9])
+categorize_ratings([1, 3, 5, 7, 8, 9])
+print("Expected Output:\nLow: 2\nMedium: 2\nHigh: 2")
