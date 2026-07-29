@@ -1,0 +1,25 @@
+def send_discount(books_purchased,discount_threshold,bonus_threshould):
+
+    """this is a function for marketing how to calculate a discount based on the amount customer spend
+            which takes 3 argument .
+    Args:books_purchased,discount_threshold,bonus_threshould
+
+    books_purchased : The number of books a customer has purchased.
+    Big discount applied! if the customer qualifies for the higher discount.
+    Discount applied! if the customer qualifies for the regular discount
+    No discount: if they do not qualify for any discount. 
+    """
+    if books_purchased <= 3 and  discount_threshold >=5  and bonus_threshould <= 10:
+    	print("No discount.")
+    elif books_purchased <= 11 and books_purchased >= 7 and discount_threshold >= 5  and bonus_threshould >= 10:
+    	print("Discount applied!") 
+    elif books_purchased >= 12 and  discount_threshold >= 5 and bonus_threshould >= 10:
+    	print("Big discount applied!") 
+    else:
+    	print("Please spend More!")
+    
+    pass
+# Checking my  results 
+send_discount(3, 5, 10)   # Should print No discount.
+send_discount(7, 5, 10)   # Should print Discount applied!
+send_discount(12, 5, 10)  # Should print Big discount applied!
