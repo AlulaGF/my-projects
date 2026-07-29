@@ -1,0 +1,80 @@
+Sorting Test Scores with Error Handling
+Introduction
+You are a coder working with test scores, focusing on sorting techniques and error handling in Python. You’ll use common sorting algorithms and write robust functions that account for possible errors.
+
+Task 1: Creating and Sorting Test Scores
+You have a list of students and their corresponding test scores. Your task is to organize and analyze the scores using sorting algorithms and Python's error-handling mechanisms.
+
+Step 1: Create the List of Students
+Create a list called students that contains the following student names: John, Lisa, Mary, Chris, Linda, Matt
+Step 2: Create a Dictionary of Test Scores
+Create a dictionary called test_performance and assign the following scores to each student as follows:
+Step 3: Extract the Scores from the Dictionary
+Create a list called scores and extract each student's score using a for loop.
+Step 4: Sorting the Scores with a Custom Function
+Define a function called bubble_sort that sorts the list of scores in ascending order.
+Step 5: Assign the Sorted Scores to sorted_scores
+Call the bubble_sort function you defined above and assign the return value to sorted_scores.
+Task 2: Calculating and Handling Errors
+Step 1: Calculate the Highest and Lowest Scores
+Use the sorted_scores list you defined above to assign the correct values to highest_score and lowest_score below.
+Step 2: Define a Function to Calculate the Class Average
+Define a function called average_class_score to calculate the average score. Add error handling for cases when the student list is empty.
+Step 3: Calculate the Average Score
+Use the average_class_score function you defined above to assign the average score to average_score below.
+
+### YOUR CODE HERE ###
+students = ["John","Lisa","Mary","Chris","Linda","Matt"]
+### YOUR CODE HERE ###
+test_performance= {"John":87,"Lisa":90,"Mary":75,"Chris":100,"Linda":100,"Matt":70}
+### YOUR CODE HERE ###
+scores= []
+for student in students:
+    scores.append(test_performance[student])
+print(scores)
+def bubble_sort(): 
+    ### YOUR CODE HERE ###
+    scores= []
+    for student in students:
+        scores.append(test_performance[student])
+        scores.sort()
+    return scores
+sorted_scores = bubble_sort()
+print(sorted_scores)
+### YOUR CODE HERE ###
+for score in sorted_scores:
+    if score <= 75:
+        lowest_score = score
+        print("lowest_score:",lowest_score)
+    else: 
+        if score >= 90:
+            highest_score = score
+            print("highest_score:" ,highest_score)
+### YOUR CODE HERE ###
+def average_class_score(score,empty_error=None,empty_class=None):
+    ### YOUR CODE HERE ###
+    try:
+        for score in sorted_scores:
+            #if score <= 75:
+                #print("lowest_score:", score)
+            #elif 76 <= score <= 89:
+            if 76 <= score <= 89:
+                print("average_class_score:", score )
+            #else: 
+                #if score >= 90:
+                    #print("highest_score:" ,score)
+        
+    except  ValueError:
+        print(f"Value Error : {empty_error} ")
+    except EmptyClassError:
+        print(f"Empty Class Error:  {empty_class}")
+### YOUR CODE HERE ###
+average_score = average_class_score(score)
+empty_class = []
+empty_scores = []
+error_average = average_class_score(empty_class, empty_scores)
+# Checking results 
+print(f"Highest Score: {highest_score}")
+print(f"Lowest Score: {lowest_score}")
+
+print(f"Average Score: {average_score}")
